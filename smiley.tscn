@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvo5x7e1wevhp"]
+
+[ext_resource type="Texture2D" uid="uid://ciyg4odrf7eeo" path="res://smiley.png" id="1_4l2d3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t12jd"]
+radius = 38.71
+
+[node name="Smiley" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("CircleShape2D_t12jd")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+texture = ExtResource("1_4l2d3")

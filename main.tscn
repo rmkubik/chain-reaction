@@ -1,31 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://cw2dnooky5y58"]
 
-[ext_resource type="Texture2D" uid="uid://ciyg4odrf7eeo" path="res://smiley.png" id="1_ig7tw"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_7dm0k"]
-radius = 38.71
+[ext_resource type="Script" uid="uid://dtuwnoidvynn2" path="res://create_on_click.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bvo5x7e1wevhp" path="res://smiley.tscn" id="1_ig7tw"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_0xm2m")
 
-[node name="RigidBody2D2" type="RigidBody2D" parent="."]
-position = Vector2(6, -114)
-gravity_scale = 0.0
+[node name="Smiley" parent="." instance=ExtResource("1_ig7tw")]
+position = Vector2(312, 99)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
-position = Vector2(516, 461)
-shape = SubResource("CircleShape2D_7dm0k")
-
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D2"]
-position = Vector2(518, 460)
-texture = ExtResource("1_ig7tw")
-
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2(11, -391)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(516, 461)
-shape = SubResource("CircleShape2D_7dm0k")
-
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
-position = Vector2(518, 460)
-texture = ExtResource("1_ig7tw")
+[node name="Smiley2" parent="." instance=ExtResource("1_ig7tw")]
+position = Vector2(404, 283)
+scale = Vector2(1.5, 1.5)
