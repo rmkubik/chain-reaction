@@ -1,7 +1,7 @@
-extends Node
+extends Node2D
 
 var rng = RandomNumberGenerator.new()
-
+var Cannon = preload("res://cannon.gd")
 
 func _init():
 	print("Hello, world!")
@@ -13,5 +13,19 @@ func _unhandled_input(event: InputEvent):
 	if event is InputEventMouseButton:
 		var inputEventMouseButton: InputEventMouseButton = event as InputEventMouseButton
 		if inputEventMouseButton.button_index == MOUSE_BUTTON_LEFT:
-			$Cannon.aim(Vector2(5,5))
-			$Cannon.fire(100 * rng.randf_range(10.0, 100.0))
+			var parameters = PhysicsPointQueryParameters2D.new()
+			parameters.position = Vector2(
+				inputEventMouseButton.position.x,
+				inputEventMouseButton.position.y
+			)
+			var result: Array = get_world_2d().direct_space_state.intersect_point(parameters)
+			if result.size() == 0: return
+			
+			var rigidBody = result[0]
+			var parent: Node2D = rigidBody.collider.get_parent()
+			
+			if parent.get_name() == "Cannon":
+				print("cannon!!!!!")
+				var cannon = parent as Cannon
+				parent.aim(Vector2(5,5))
+				parent.fire(100 * rng.randf_range(10.0, 100.0))
