@@ -10,3 +10,13 @@ func fire(power: float):
 
 func aim(direction: Vector2):
 	$".".rotation = direction.angle()
+
+
+func _on_rigid_body_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton:
+		var mbe = event as InputEventMouseButton
+		if mbe.button_index != 1:
+			return
+		if mbe.pressed:
+			print("calling")
+			$"../Mouser".on_cannon_clicked(self)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://lriomvtt1o8x"]
+[gd_scene load_steps=3 format=3 uid="uid://dk6vevwish86"]
 
 [ext_resource type="Script" uid="uid://cj37063e5gab8" path="res://cannon.gd" id="1_23j6s"]
 [ext_resource type="Texture2D" uid="uid://dmc8ss5reu11y" path="res://cannon.png" id="1_i10un"]
@@ -7,6 +7,7 @@
 script = ExtResource("1_23j6s")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
+input_pickable = true
 gravity_scale = 0.0
 freeze = true
 
@@ -15,3 +16,5 @@ polygon = PackedVector2Array(-52, -34, 59, -13, 60, 26, -52, 48)
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
 texture = ExtResource("1_i10un")
+
+[connection signal="input_event" from="RigidBody2D" to="." method="_on_rigid_body_2d_input_event"]
