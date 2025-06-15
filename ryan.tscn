@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cobso1ktxex65"]
+
+[ext_resource type="Script" uid="uid://dtuwnoidvynn2" path="res://create_on_click.gd" id="1_i3su3"]
+[ext_resource type="PackedScene" uid="uid://lriomvtt1o8x" path="res://cannon.tscn" id="2_lsn4h"]
+
+[node name="Ryan" type="Node2D"]
+script = ExtResource("1_i3su3")
+
+[node name="Cannon" parent="." instance=ExtResource("2_lsn4h")]
+position = Vector2(145, 126)

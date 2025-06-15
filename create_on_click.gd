@@ -1,5 +1,8 @@
 extends Node
 
+var rng = RandomNumberGenerator.new()
+
+
 func _init():
 	print("Hello, world!")
 
@@ -10,9 +13,5 @@ func _unhandled_input(event: InputEvent):
 	if event is InputEventMouseButton:
 		var inputEventMouseButton: InputEventMouseButton = event as InputEventMouseButton
 		if inputEventMouseButton.button_index == MOUSE_BUTTON_LEFT:
-			var smiley: Node2D = load("res://smiley.tscn").instantiate()
-			add_child(smiley)
-			smiley.position.x = inputEventMouseButton.position.x
-			smiley.position.y = inputEventMouseButton.position.y
-			
-			
+			$Cannon.aim(Vector2(5,5))
+			$Cannon.fire(100 * rng.randf_range(10.0, 100.0))
