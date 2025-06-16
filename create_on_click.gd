@@ -1,7 +1,6 @@
 extends Node2D
 
 var rng = RandomNumberGenerator.new()
-var Cannon = preload("res://cannon.gd")
 
 func _init():
 	print("Hello, world!")
@@ -22,10 +21,9 @@ func _unhandled_input(event: InputEvent):
 			if result.size() == 0: return
 			
 			var rigidBody = result[0]
-			var parent: Node2D = rigidBody.collider.get_parent()
+			var parent = rigidBody.collider.get_parent()
 			
-			if parent.get_name() == "Cannon":
-				print("cannon!!!!!")
-				var cannon = parent as Cannon
+			if parent is Cannon:
+				parent.aim()
 				parent.aim(Vector2(5,5))
 				parent.fire(100 * rng.randf_range(10.0, 100.0))

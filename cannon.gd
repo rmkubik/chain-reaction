@@ -1,4 +1,5 @@
 extends Node2D
+class_name Cannon
 
 func fire(power: float):
 	var smiley: Node2D = load("res://smiley.tscn").instantiate()
