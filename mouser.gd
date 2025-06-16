@@ -13,9 +13,9 @@ var fire_normal: Vector2
 # length of drag
 var length: float
 # cannon we're firing
-var cannon: Node2D
+var cannon: Cannon
 
-func _start_drag(pos: Vector2, cannon: Node2D = null):
+func _start_drag(pos: Vector2, cannon: Cannon = null):
 	is_dragging = true
 	anchor = pos
 	_update_mouse(pos)
@@ -38,6 +38,17 @@ func _release(pos: Vector2):
 	if cannon != null and length > 5:
 		cannon.fire(length)
 
+func _get_cannon(mouse_pos: Vector2) -> Cannon:
+	var parameters = PhysicsPointQueryParameters2D.new()
+	parameters.position = mouse_pos
+	var result: Array = get_world_2d().direct_space_state.intersect_point(parameters)
+	if result.size() == 0: return
+	var rigidBody = result[0]
+	var parent = rigidBody.collider.get_parent()	
+	if parent is Cannon:
+		return parent
+	return null
+
 func _input(event: InputEvent):
 	# Mouse in viewport coordinates.
 	if event is InputEventMouseButton:
@@ -45,8 +56,9 @@ func _input(event: InputEvent):
 		if mbe.button_index != 1:
 			return
 		if mbe.pressed:
-			pass
-			#_start_drag(mbe.position)
+			var cannon = _get_cannon(mbe.position)
+			if cannon:
+				_start_drag(mbe.position, cannon)
 		elif is_dragging:
 			_release(mbe.position)
 		queue_redraw()
@@ -60,9 +72,6 @@ func _input(event: InputEvent):
 
 	# Print the size of the viewport.
 	#print("Viewport Resolution is: ", get_viewport().get_visible_rect().size)
-
-func on_cannon_clicked(cannon: Node2D):
-	_start_drag(cannon.position, cannon)
 
 #func _draw():
 	#if not is_dragging:

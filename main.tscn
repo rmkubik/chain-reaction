@@ -14,6 +14,6 @@ position = Vector2(678, 439)
 scale = Vector2(1.5, 1.5)
 
 [node name="Cannon" parent="." instance=ExtResource("3_h2yge")]
-position = Vector2(190, 188)
+position = Vector2(331, 284)
 
 [node name="Mouser" parent="." instance=ExtResource("4_1bvp3")]
