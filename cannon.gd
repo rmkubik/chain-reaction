@@ -9,7 +9,8 @@ func fire(power: float):
 	smileyRB.position.y = cannonRB.position.y
 	smileyRB.add_collision_exception_with(cannonRB)
 	get_node(".").add_child(smiley)
-	smileyRB.add_constant_central_force(Vector2.from_angle($".".rotation) * power)
+	#smileyRB.add_constant_central_force(Vector2.from_angle($".".rotation) * power)
+	smileyRB.apply_impulse(Vector2.from_angle($".".rotation) * power)
 
 func aim(direction: Vector2):
 	$".".rotation = direction.angle()
