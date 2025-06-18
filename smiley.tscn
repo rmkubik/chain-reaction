@@ -11,7 +11,10 @@ radius = 38.71
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+scale = Vector2(0.5, 0.5)
 shape = SubResource("CircleShape2D_t12jd")
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+z_index = -1
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_4l2d3")

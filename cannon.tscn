@@ -19,4 +19,7 @@ polygon = PackedVector2Array(-52, -34, 59, -13, 60, 26, -52, 48)
 position = Vector2(0, -7)
 texture = ExtResource("1_i10un")
 
+[node name="SpawnPoint" type="Node2D" parent="."]
+position = Vector2(37, 0)
+
 [connection signal="input_event" from="RigidBody2D" to="." method="_on_rigid_body_2d_input_event"]

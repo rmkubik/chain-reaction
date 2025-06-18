@@ -36,7 +36,7 @@ func _release(pos: Vector2):
 	print("Mouse up at ", pos)
 	var vec = (pos - anchor).normalized()
 	if cannon != null and length > 5:
-		cannon.fire(length)
+		cannon.fire(length * 3)
 
 func _get_cannon(mouse_pos: Vector2) -> Cannon:
 	var parameters = PhysicsPointQueryParameters2D.new()
