@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://cw2dnooky5y58"]
+[gd_scene load_steps=9 format=3 uid="uid://cw2dnooky5y58"]
 
 [ext_resource type="Script" uid="uid://bduu60uhoe2ia" path="res://main.gd" id="1_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://bvo5x7e1wevhp" path="res://smiley.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://dk6vevwish86" path="res://cannon.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://rhhugsc364x7" path="res://mouser.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://brkq7q8wikvyg" path="res://target.tscn" id="4_272bh"]
 [ext_resource type="Texture2D" uid="uid://dm5jlag6rjhhf" path="res://Square.png" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://dx7fdwmukomxc" path="res://goal.tscn" id="7_5vw27"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lquwl"]
 size = Vector2(382.375, 42.2499)
@@ -22,6 +24,9 @@ scale = Vector2(1.5, 1.5)
 [node name="Cannon" parent="." instance=ExtResource("3_h2yge")]
 position = Vector2(331, 284)
 
+[node name="Target" parent="." instance=ExtResource("4_272bh")]
+position = Vector2(854, 340)
+
 [node name="Mouser" parent="." instance=ExtResource("4_1bvp3")]
 
 [node name="Wall" type="RigidBody2D" parent="."]
@@ -36,3 +41,6 @@ texture = ExtResource("5_lquwl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
 shape = SubResource("RectangleShape2D_lquwl")
+
+[node name="Goal" parent="." instance=ExtResource("7_5vw27")]
+position = Vector2(1219, 245)
