@@ -30,9 +30,9 @@ func _ready() -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	print('entered')
-	if body.get_parent() is Target:
+	if body is Target:
 		animatedSprite.play("lick")
-		body.get_parent().queue_free()
+		body.queue_free()
 	isColliding = true
 	queue_redraw()
 
