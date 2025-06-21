@@ -17,7 +17,7 @@ func _draw():
 	var color = Color.hex(0xa9ff9cff)
 	if (isColliding):
 		color = Color.hex(0x13ad3cff)
-	draw_circle(Vector2(0,0), 10, color)
+	draw_circle(Vector2(0,0), collisionShape.shape.radius, color)
 
 	
 #func _process(delta):

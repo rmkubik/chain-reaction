@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d4d6pyttcqncw" path="res://goal.gd" id="1_6k3qi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7sh37"]
-radius = 50.0
+radius = 20.0
 
 [node name="Goal" type="Node2D"]
 script = ExtResource("1_6k3qi")
@@ -11,7 +11,6 @@ script = ExtResource("1_6k3qi")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-scale = Vector2(1e-05, 1e-05)
 shape = SubResource("CircleShape2D_7sh37")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
