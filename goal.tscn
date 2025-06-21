@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://dx7fdwmukomxc"]
+[gd_scene load_steps=4 format=3 uid="uid://dx7fdwmukomxc"]
 
 [ext_resource type="Script" uid="uid://d4d6pyttcqncw" path="res://goal.gd" id="1_6k3qi"]
+[ext_resource type="Texture2D" uid="uid://cvd1l25opfooy" path="res://goal.png" id="2_0qle8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7sh37"]
-radius = 20.0
+radius = 60.0
 
 [node name="Goal" type="Node2D"]
 script = ExtResource("1_6k3qi")
@@ -12,6 +13,9 @@ script = ExtResource("1_6k3qi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_7sh37")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("2_0qle8")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
