@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://brkq7q8wikvyg"]
+[gd_scene load_steps=4 format=3 uid="uid://brkq7q8wikvyg"]
 
+[ext_resource type="Script" uid="uid://bqsggklfmy72g" path="res://target.gd" id="1_e1yvt"]
 [ext_resource type="Texture2D" uid="uid://owo5v8ru8fst" path="res://target.png" id="1_t2jmu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e1yvt"]
 radius = 40.0
 
 [node name="Target" type="Node2D"]
+script = ExtResource("1_e1yvt")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 gravity_scale = 0.0
