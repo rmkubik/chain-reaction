@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cw2dnooky5y58"]
+[gd_scene load_steps=10 format=3 uid="uid://cw2dnooky5y58"]
 
 [ext_resource type="Script" uid="uid://bduu60uhoe2ia" path="res://Scripts/main.gd" id="1_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://bvo5x7e1wevhp" path="res://Scenes/smiley.tscn" id="2_272bh"]
@@ -7,12 +7,31 @@
 [ext_resource type="PackedScene" uid="uid://rhhugsc364x7" path="res://Scenes/mouser.tscn" id="5_4c57u"]
 [ext_resource type="PackedScene" uid="uid://cr14fyg7q3ndc" path="res://Scenes/wall.tscn" id="6_efxa6"]
 [ext_resource type="PackedScene" uid="uid://dx7fdwmukomxc" path="res://Scenes/goal.tscn" id="7_dg77c"]
+[ext_resource type="Texture2D" uid="uid://dm5jlag6rjhhf" path="res://Sprites/Square.png" id="8_5vw27"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kek77"]
+size = Vector2(29, 29)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_1bvp3")
 
 [node name="Smiley" parent="." instance=ExtResource("2_272bh")]
 position = Vector2(602, 122)
+
+[node name="Smiley3" parent="." instance=ExtResource("2_272bh")]
+position = Vector2(487, 121)
+
+[node name="Smiley4" parent="." instance=ExtResource("2_272bh")]
+position = Vector2(1018, 106)
+
+[node name="Smiley5" parent="." instance=ExtResource("2_272bh")]
+position = Vector2(943, 282)
+
+[node name="Smiley6" parent="." instance=ExtResource("2_272bh")]
+position = Vector2(1045, 399)
+
+[node name="Smiley7" parent="." instance=ExtResource("2_272bh")]
+position = Vector2(870, 458)
 
 [node name="Smiley2" parent="." instance=ExtResource("2_272bh")]
 position = Vector2(678, 439)
@@ -46,3 +65,129 @@ scale = Vector2(3, 1)
 position = Vector2(183, 289)
 rotation = 1.5708
 scale = Vector2(1.5, 1.5)
+
+[node name="Crate" type="RigidBody2D" parent="."]
+position = Vector2(657, 218)
+gravity_scale = 0.0
+contact_monitor = true
+
+[node name="Graphics" type="Sprite2D" parent="Crate"]
+position = Vector2(4.50001, 4.50001)
+scale = Vector2(0.113281, 0.113281)
+texture = ExtResource("8_5vw27")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate"]
+position = Vector2(4.5, 4.5)
+shape = SubResource("RectangleShape2D_kek77")
+
+[node name="Crate2" type="RigidBody2D" parent="."]
+position = Vector2(719, 114)
+gravity_scale = 0.0
+contact_monitor = true
+
+[node name="Graphics" type="Sprite2D" parent="Crate2"]
+position = Vector2(4.50001, 4.50001)
+scale = Vector2(0.113281, 0.113281)
+texture = ExtResource("8_5vw27")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate2"]
+position = Vector2(4.5, 4.5)
+shape = SubResource("RectangleShape2D_kek77")
+
+[node name="Crate3" type="RigidBody2D" parent="."]
+position = Vector2(528, 382)
+gravity_scale = 0.0
+contact_monitor = true
+
+[node name="Graphics" type="Sprite2D" parent="Crate3"]
+position = Vector2(4.50001, 4.50001)
+scale = Vector2(0.113281, 0.113281)
+texture = ExtResource("8_5vw27")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate3"]
+position = Vector2(4.5, 4.5)
+shape = SubResource("RectangleShape2D_kek77")
+
+[node name="Crate4" type="RigidBody2D" parent="."]
+position = Vector2(611, 310)
+gravity_scale = 0.0
+contact_monitor = true
+
+[node name="Graphics" type="Sprite2D" parent="Crate4"]
+position = Vector2(4.50001, 4.50001)
+scale = Vector2(0.113281, 0.113281)
+texture = ExtResource("8_5vw27")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate4"]
+position = Vector2(4.5, 4.5)
+shape = SubResource("RectangleShape2D_kek77")
+
+[node name="Crate5" type="RigidBody2D" parent="."]
+position = Vector2(830, 186)
+gravity_scale = 0.0
+contact_monitor = true
+
+[node name="Graphics" type="Sprite2D" parent="Crate5"]
+position = Vector2(4.50001, 4.50001)
+scale = Vector2(0.113281, 0.113281)
+texture = ExtResource("8_5vw27")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate5"]
+position = Vector2(4.5, 4.5)
+shape = SubResource("RectangleShape2D_kek77")
+
+[node name="Crate6" type="RigidBody2D" parent="."]
+position = Vector2(1032, 185)
+gravity_scale = 0.0
+contact_monitor = true
+
+[node name="Graphics" type="Sprite2D" parent="Crate6"]
+position = Vector2(4.50001, 4.50001)
+scale = Vector2(0.113281, 0.113281)
+texture = ExtResource("8_5vw27")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate6"]
+position = Vector2(4.5, 4.5)
+shape = SubResource("RectangleShape2D_kek77")
+
+[node name="Crate7" type="RigidBody2D" parent="."]
+position = Vector2(1075, 311)
+gravity_scale = 0.0
+contact_monitor = true
+
+[node name="Graphics" type="Sprite2D" parent="Crate7"]
+position = Vector2(4.50001, 4.50001)
+scale = Vector2(0.113281, 0.113281)
+texture = ExtResource("8_5vw27")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate7"]
+position = Vector2(4.5, 4.5)
+shape = SubResource("RectangleShape2D_kek77")
+
+[node name="Crate8" type="RigidBody2D" parent="."]
+position = Vector2(936, 392)
+gravity_scale = 0.0
+contact_monitor = true
+
+[node name="Graphics" type="Sprite2D" parent="Crate8"]
+position = Vector2(4.50001, 4.50001)
+scale = Vector2(0.113281, 0.113281)
+texture = ExtResource("8_5vw27")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate8"]
+position = Vector2(4.5, 4.5)
+shape = SubResource("RectangleShape2D_kek77")
+
+[node name="Crate9" type="RigidBody2D" parent="."]
+position = Vector2(1164, 440)
+gravity_scale = 0.0
+contact_monitor = true
+
+[node name="Graphics" type="Sprite2D" parent="Crate9"]
+position = Vector2(4.50001, 4.50001)
+scale = Vector2(0.113281, 0.113281)
+texture = ExtResource("8_5vw27")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate9"]
+position = Vector2(4.5, 4.5)
+shape = SubResource("RectangleShape2D_kek77")
