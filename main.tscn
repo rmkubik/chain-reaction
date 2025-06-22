@@ -1,48 +1,48 @@
 [gd_scene load_steps=8 format=3 uid="uid://cw2dnooky5y58"]
 
-[ext_resource type="Script" uid="uid://bduu60uhoe2ia" path="res://main.gd" id="1_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://bvo5x7e1wevhp" path="res://smiley.tscn" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://dk6vevwish86" path="res://cannon.tscn" id="3_h2yge"]
-[ext_resource type="PackedScene" uid="uid://rhhugsc364x7" path="res://mouser.tscn" id="4_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://brkq7q8wikvyg" path="res://target.tscn" id="4_272bh"]
-[ext_resource type="PackedScene" uid="uid://cr14fyg7q3ndc" path="res://wall.tscn" id="6_272bh"]
-[ext_resource type="PackedScene" uid="uid://dx7fdwmukomxc" path="res://goal.tscn" id="7_5vw27"]
+[ext_resource type="Script" uid="uid://bduu60uhoe2ia" path="res://Scripts/main.gd" id="1_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://bvo5x7e1wevhp" path="res://Scenes/smiley.tscn" id="2_272bh"]
+[ext_resource type="PackedScene" uid="uid://dk6vevwish86" path="res://Scenes/cannon.tscn" id="3_5vw27"]
+[ext_resource type="PackedScene" uid="uid://brkq7q8wikvyg" path="res://Scenes/target.tscn" id="4_kek77"]
+[ext_resource type="PackedScene" uid="uid://rhhugsc364x7" path="res://Scenes/mouser.tscn" id="5_4c57u"]
+[ext_resource type="PackedScene" uid="uid://cr14fyg7q3ndc" path="res://Scenes/wall.tscn" id="6_efxa6"]
+[ext_resource type="PackedScene" uid="uid://dx7fdwmukomxc" path="res://Scenes/goal.tscn" id="7_dg77c"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_1bvp3")
 
-[node name="Smiley" parent="." instance=ExtResource("1_ig7tw")]
+[node name="Smiley" parent="." instance=ExtResource("2_272bh")]
 position = Vector2(602, 122)
 
-[node name="Smiley2" parent="." instance=ExtResource("1_ig7tw")]
+[node name="Smiley2" parent="." instance=ExtResource("2_272bh")]
 position = Vector2(678, 439)
 scale = Vector2(1.5, 1.5)
 
-[node name="Cannon" parent="." instance=ExtResource("3_h2yge")]
+[node name="Cannon" parent="." instance=ExtResource("3_5vw27")]
 position = Vector2(331, 284)
 
-[node name="Target" parent="." instance=ExtResource("4_272bh")]
-position = Vector2(854, 340)
+[node name="Mouser" parent="." instance=ExtResource("5_4c57u")]
 
-[node name="Mouser" parent="." instance=ExtResource("4_1bvp3")]
+[node name="Target" parent="." instance=ExtResource("4_kek77")]
+position = Vector2(784, 329)
 
-[node name="Wall" parent="." instance=ExtResource("6_272bh")]
+[node name="Wall" parent="." instance=ExtResource("6_efxa6")]
 position = Vector2(789, 556)
 scale = Vector2(3, 1)
 
-[node name="Goal" parent="." instance=ExtResource("7_5vw27")]
+[node name="Goal" parent="." instance=ExtResource("7_dg77c")]
 position = Vector2(1219, 245)
 
-[node name="Wall2" parent="." instance=ExtResource("6_272bh")]
+[node name="Wall2" parent="." instance=ExtResource("6_efxa6")]
 position = Vector2(1386, 289)
 rotation = 1.5708
 scale = Vector2(1.5, 1)
 
-[node name="Wall3" parent="." instance=ExtResource("6_272bh")]
+[node name="Wall3" parent="." instance=ExtResource("6_efxa6")]
 position = Vector2(789, 24)
 scale = Vector2(3, 1)
 
-[node name="Wall4" parent="." instance=ExtResource("6_272bh")]
+[node name="Wall4" parent="." instance=ExtResource("6_efxa6")]
 position = Vector2(183, 289)
 rotation = 1.5708
 scale = Vector2(1.5, 1.5)

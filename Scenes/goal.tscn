@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://dx7fdwmukomxc"]
 
-[ext_resource type="Script" uid="uid://d4d6pyttcqncw" path="res://goal.gd" id="1_6k3qi"]
-[ext_resource type="Texture2D" uid="uid://cvd1l25opfooy" path="res://goal.png" id="2_0qle8"]
-[ext_resource type="Texture2D" uid="uid://ducx8n6r8a216" path="res://goal-sheet.png" id="3_p20yd"]
+[ext_resource type="Script" uid="uid://d4d6pyttcqncw" path="res://Scripts/goal.gd" id="1_6k3qi"]
+[ext_resource type="Texture2D" uid="uid://cvd1l25opfooy" path="res://Sprites/goal.png" id="2_0qle8"]
+[ext_resource type="Texture2D" uid="uid://ducx8n6r8a216" path="res://Sprites/goal-sheet.png" id="3_p20yd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7sh37"]
 radius = 60.0

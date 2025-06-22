@@ -1,8 +1,10 @@
 extends Node2D
 class_name Cannon
 
+@export var smiley : PackedScene
+
 func fire(power: float):
-	var smiley: Node2D = load("res://smiley.tscn").instantiate()
+	var smiley: Node2D = smiley.instantiate()
 	var cannonRB: RigidBody2D = get_node('RigidBody2D')
 	var smileyRB: RigidBody2D = smiley.get_node('RigidBody2D')
 	var spawnPoint = get_node('SpawnPoint')
