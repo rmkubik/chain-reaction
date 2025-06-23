@@ -1,9 +1,11 @@
 extends Node2D
+class_name Smiley
 
 @export var explosion : PackedScene
 
 var explosion_radius = 128
 var explosion_force = 5
+var should_explode = true
 
 ## push away objects in a radius
 func explode(pos: Vector2):
@@ -28,17 +30,19 @@ func explode(pos: Vector2):
 			var vec = rb.global_position - pos
 			rb.apply_impulse(vec.normalized() * max(0, (explosion_radius - vec.length()) * explosion_force))
 
-
-func _on_rigid_body_2d_body_entered(_body: Node) -> void:
-	print("exploding")
+func show_particles(pos: Vector2):
 	var expl: Node2D = explosion.instantiate()
-	var rb = get_node("RigidBody2D")
-	expl.position.x = rb.global_position.x
-	expl.position.y = rb.global_position.y
+	expl.position.x = pos.x
+	expl.position.y = pos.y
 	var particles = expl.get_node("CPUParticles2D") as CPUParticles2D
 	get_node("/root").add_child(expl)
 	particles.emitting = true
-	explode(rb.global_position)
-	queue_free()
-	# delete the explosion node after a couple seconds
+	# delete the particles after a couple seconds
 	get_tree().create_timer(2).timeout.connect(expl.queue_free)
+
+func _on_rigid_body_2d_body_entered(_body: Node) -> void:
+	if should_explode:
+		var rb = get_node("RigidBody2D")
+		show_particles(rb.global_position)
+		explode(rb.global_position)
+	queue_free()

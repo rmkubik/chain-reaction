@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="chain-reaction"
-run/main_scene="uid://cw2dnooky5y58"
+run/main_scene="uid://dcxqke6akw3fi"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

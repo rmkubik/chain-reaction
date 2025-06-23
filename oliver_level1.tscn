@@ -1,0 +1,84 @@
+[gd_scene load_steps=10 format=3 uid="uid://pv8gwscf8rmp"]
+
+[ext_resource type="Script" uid="uid://bduu60uhoe2ia" path="res://Scripts/main.gd" id="1_42fru"]
+[ext_resource type="PackedScene" uid="uid://bvo5x7e1wevhp" path="res://Scenes/smiley.tscn" id="2_r6dkl"]
+[ext_resource type="PackedScene" uid="uid://dk6vevwish86" path="res://Scenes/cannon.tscn" id="3_dc0a8"]
+[ext_resource type="PackedScene" uid="uid://rhhugsc364x7" path="res://Scenes/mouser.tscn" id="4_7cpqv"]
+[ext_resource type="PackedScene" uid="uid://brkq7q8wikvyg" path="res://Scenes/target.tscn" id="5_12jyf"]
+[ext_resource type="PackedScene" uid="uid://cr14fyg7q3ndc" path="res://Scenes/wall.tscn" id="6_egcba"]
+[ext_resource type="PackedScene" uid="uid://dx7fdwmukomxc" path="res://Scenes/goal.tscn" id="7_3ixj5"]
+[ext_resource type="Texture2D" uid="uid://dm5jlag6rjhhf" path="res://Sprites/Square.png" id="8_cb4xt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kek77"]
+size = Vector2(29, 29)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_42fru")
+
+[node name="Smiley" parent="." instance=ExtResource("2_r6dkl")]
+position = Vector2(904, 756)
+
+[node name="Smiley3" parent="." instance=ExtResource("2_r6dkl")]
+position = Vector2(909, 148)
+
+[node name="Cannon" parent="." instance=ExtResource("3_dc0a8")]
+position = Vector2(356, 403)
+
+[node name="Mouser" parent="." instance=ExtResource("4_7cpqv")]
+
+[node name="Target" parent="." instance=ExtResource("5_12jyf")]
+position = Vector2(939, 424)
+
+[node name="Wall" parent="." instance=ExtResource("6_egcba")]
+position = Vector2(789, 831)
+scale = Vector2(3, 1)
+
+[node name="Goal" parent="." instance=ExtResource("7_3ixj5")]
+position = Vector2(1219, 414)
+
+[node name="Wall3" parent="." instance=ExtResource("6_egcba")]
+position = Vector2(789, 24)
+scale = Vector2(3, 1)
+
+[node name="Wall4" parent="." instance=ExtResource("6_egcba")]
+position = Vector2(183, 427)
+rotation = 1.5708
+scale = Vector2(2.22, 1.5)
+
+[node name="Wall5" parent="." instance=ExtResource("6_egcba")]
+position = Vector2(1396, 427)
+rotation = 1.5708
+scale = Vector2(2.22, 1.5)
+
+[node name="Wall6" parent="." instance=ExtResource("6_egcba")]
+position = Vector2(701, 433)
+rotation = 1.5708
+scale = Vector2(0.579996, 1.5)
+
+[node name="Crate" type="RigidBody2D" parent="."]
+position = Vector2(903, 215)
+gravity_scale = 0.0
+contact_monitor = true
+
+[node name="Graphics" type="Sprite2D" parent="Crate"]
+position = Vector2(4.50001, 4.50001)
+scale = Vector2(0.113281, 0.113281)
+texture = ExtResource("8_cb4xt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate"]
+position = Vector2(4.5, 4.5)
+shape = SubResource("RectangleShape2D_kek77")
+
+[node name="Crate7" type="RigidBody2D" parent="."]
+position = Vector2(899, 672)
+gravity_scale = 0.0
+contact_monitor = true
+
+[node name="Graphics" type="Sprite2D" parent="Crate7"]
+position = Vector2(4.50001, 4.50001)
+scale = Vector2(0.113281, 0.113281)
+texture = ExtResource("8_cb4xt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate7"]
+position = Vector2(4.5, 4.5)
+shape = SubResource("RectangleShape2D_kek77")
