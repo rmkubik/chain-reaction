@@ -27,7 +27,7 @@ position = Vector2(356, 403)
 [node name="Mouser" parent="." instance=ExtResource("4_7cpqv")]
 
 [node name="Target" parent="." instance=ExtResource("5_12jyf")]
-position = Vector2(939, 424)
+position = Vector2(971, 424)
 
 [node name="Wall" parent="." instance=ExtResource("6_egcba")]
 position = Vector2(789, 831)
@@ -56,7 +56,7 @@ rotation = 1.5708
 scale = Vector2(0.579996, 1.5)
 
 [node name="Crate" type="RigidBody2D" parent="."]
-position = Vector2(903, 215)
+position = Vector2(917, 215)
 gravity_scale = 0.0
 contact_monitor = true
 
@@ -70,7 +70,7 @@ position = Vector2(4.5, 4.5)
 shape = SubResource("RectangleShape2D_kek77")
 
 [node name="Crate7" type="RigidBody2D" parent="."]
-position = Vector2(899, 672)
+position = Vector2(923, 672)
 gravity_scale = 0.0
 contact_monitor = true
 
