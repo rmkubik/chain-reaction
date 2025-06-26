@@ -12,8 +12,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kek77"]
 size = Vector2(29, 29)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("goal")]
 script = ExtResource("1_42fru")
+goal = NodePath("Goal")
 
 [node name="Smiley" parent="." instance=ExtResource("2_r6dkl")]
 position = Vector2(904, 756)

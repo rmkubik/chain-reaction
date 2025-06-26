@@ -6,6 +6,8 @@ var collisionShape: CollisionShape2D
 var isColliding: bool
 @onready var animatedSprite: AnimatedSprite2D = $Area2D/AnimatedSprite2D
 
+signal goal_completed
+
 func _ready() -> void:
 	area = get_node("Area2D")
 	collisionShape = get_node('Area2D/CollisionShape2D')
@@ -33,6 +35,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Target:
 		animatedSprite.play("lick")
 		body.queue_free()
+		goal_completed.emit()		
 	isColliding = true
 	queue_redraw()
 
