@@ -30,12 +30,12 @@ position = Vector2(356, 403)
 [node name="Target" parent="." instance=ExtResource("5_12jyf")]
 position = Vector2(971, 424)
 
+[node name="Goal" parent="." instance=ExtResource("7_3ixj5")]
+position = Vector2(1219, 414)
+
 [node name="Wall" parent="." instance=ExtResource("6_egcba")]
 position = Vector2(789, 831)
 scale = Vector2(3, 1)
-
-[node name="Goal" parent="." instance=ExtResource("7_3ixj5")]
-position = Vector2(1219, 414)
 
 [node name="Wall3" parent="." instance=ExtResource("6_egcba")]
 position = Vector2(789, 24)
