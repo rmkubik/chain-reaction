@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvo5x7e1wevhp"]
+[gd_scene load_steps=6 format=3 uid="uid://bvo5x7e1wevhp"]
 
-[ext_resource type="Texture2D" uid="uid://ciyg4odrf7eeo" path="res://Sprites/smiley.png" id="1_4l2d3"]
 [ext_resource type="Script" uid="uid://dninbnjaghtiq" path="res://Scripts/smiley.gd" id="1_t12jd"]
+[ext_resource type="Texture2D" uid="uid://3wq0lw8u8fox" path="res://Sprites/bouncer.png" id="3_m17f5"]
 [ext_resource type="PackedScene" uid="uid://cjq4mlfivpl6r" path="res://Scenes/exploder.tscn" id="3_waren"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t12jd"]
 radius = 38.71
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_waren"]
+atlas = ExtResource("3_m17f5")
+region = Rect2(128, 0, 64, 64)
 
 [node name="Smiley" type="Node2D" node_paths=PackedStringArray("exploder")]
 script = ExtResource("1_t12jd")
@@ -26,6 +30,6 @@ shape = SubResource("CircleShape2D_t12jd")
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
 z_index = -1
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_4l2d3")
+texture = SubResource("AtlasTexture_waren")
 
 [connection signal="body_entered" from="RigidBody2D" to="." method="_on_rigid_body_2d_body_entered"]
