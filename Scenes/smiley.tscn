@@ -2,14 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://ciyg4odrf7eeo" path="res://Sprites/smiley.png" id="1_4l2d3"]
 [ext_resource type="Script" uid="uid://dninbnjaghtiq" path="res://Scripts/smiley.gd" id="1_t12jd"]
-[ext_resource type="PackedScene" uid="uid://bosg3r2j3x4yx" path="res://Scenes/explosion.tscn" id="2_m17f5"]
+[ext_resource type="PackedScene" uid="uid://cjq4mlfivpl6r" path="res://Scenes/exploder.tscn" id="3_waren"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t12jd"]
 radius = 38.71
 
-[node name="Smiley" type="Node2D"]
+[node name="Smiley" type="Node2D" node_paths=PackedStringArray("exploder")]
 script = ExtResource("1_t12jd")
-explosion = ExtResource("2_m17f5")
+exploder = NodePath("Exploder")
+
+[node name="Exploder" parent="." instance=ExtResource("3_waren")]
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 gravity_scale = 0.0

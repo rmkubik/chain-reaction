@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjq4mlfivpl6r"]
+
+[ext_resource type="Script" uid="uid://ct60qmr6un6oc" path="res://Scripts/exploder.gd" id="1_myu2h"]
+[ext_resource type="PackedScene" uid="uid://bosg3r2j3x4yx" path="res://Scenes/explosion.tscn" id="2_634tm"]
+
+[node name="Exploder" type="Node2D"]
+script = ExtResource("1_myu2h")
+explosion = ExtResource("2_634tm")
