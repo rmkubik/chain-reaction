@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=3 uid="uid://da4i7dw0sopf2"]
+
+[ext_resource type="Script" uid="uid://d00tv12cwnrv7" path="res://bouncer.gd" id="1_laxuj"]
+[ext_resource type="PackedScene" uid="uid://cjq4mlfivpl6r" path="res://Scenes/exploder.tscn" id="2_ugkxa"]
+[ext_resource type="Texture2D" uid="uid://3wq0lw8u8fox" path="res://Sprites/bouncer.png" id="3_laxuj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e1yvt"]
+radius = 20.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wspw"]
+atlas = ExtResource("3_laxuj")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dowt0"]
+atlas = ExtResource("3_laxuj")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmybu"]
+atlas = ExtResource("3_laxuj")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1qkk6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wspw")
+}],
+"loop": true,
+"name": &"angry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dowt0")
+}],
+"loop": true,
+"name": &"happy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmybu")
+}],
+"loop": true,
+"name": &"mad",
+"speed": 5.0
+}]
+
+[node name="Bouncer" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." node_paths=PackedStringArray("exploder")]
+gravity_scale = 0.0
+script = ExtResource("1_laxuj")
+exploder = NodePath("Exploder")
+
+[node name="Exploder" parent="RigidBody2D" instance=ExtResource("2_ugkxa")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("CircleShape2D_e1yvt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RigidBody2D"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_1qkk6")
+animation = &"mad"
+
+[connection signal="body_entered" from="RigidBody2D" to="RigidBody2D" method="_on_body_entered"]
