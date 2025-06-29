@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dcxqke6akw3fi"]
+[gd_scene load_steps=9 format=3 uid="uid://dcxqke6akw3fi"]
 
 [ext_resource type="Script" uid="uid://bvaxypxahpqny" path="res://game.gd" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://sfpeoeml3xlp" path="res://oliver_level2.tscn" id="2_7jktm"]
@@ -8,6 +8,19 @@
 [ext_resource type="PackedScene" uid="uid://cdyq20tyijvav" path="res://oliver_level3.tscn" id="6_ryrav"]
 [ext_resource type="PackedScene" uid="uid://b1n7vuwtjhhn" path="res://oliver_level4.tscn" id="7_eow3j"]
 
-[node name="Game" type="Node2D"]
+[sub_resource type="LabelSettings" id="LabelSettings_eow3j"]
+font_size = 24
+
+[node name="Game" type="Node2D" node_paths=PackedStringArray("levelCounter")]
 script = ExtResource("1_80nbo")
 levels = Array[PackedScene]([ExtResource("2_e2o6t"), ExtResource("3_fc0e3"), ExtResource("4_7jktm"), ExtResource("2_7jktm"), ExtResource("6_ryrav"), ExtResource("7_eow3j")])
+levelCounter = NodePath("LevelCounter")
+
+[node name="LevelCounter" type="Label" parent="."]
+offset_left = 1707.0
+offset_top = 36.0
+offset_right = 1839.0
+offset_bottom = 70.0
+text = "Level 1/X"
+label_settings = SubResource("LabelSettings_eow3j")
+metadata/_edit_use_anchors_ = true

@@ -2,6 +2,7 @@ extends Node2D
 
 
 @export var levels: Array[PackedScene]
+@export var levelCounter: Label
 
 var level : Node2D
 var currentLevel = 0
@@ -24,6 +25,8 @@ func _on_goal_completed():
 func loadCurrentLevel():
 	if level != null:
 		level.queue_free()
+		
+	levelCounter.text = "Level %s/%s" % [str(currentLevel + 1), str(levels.size())]
 
 	level = levels[currentLevel].instantiate()
 	add_child(level)
